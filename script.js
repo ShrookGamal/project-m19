@@ -147,53 +147,64 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-let selectedRating = 0;
-const stars = document.querySelectorAll('.star-item');
+document.addEventListener('DOMContentLoaded', () => {
+    let currentRating = 0;
+    const stars = document.querySelectorAll('.star-item');
 
-stars.forEach(star => {
-    star.addEventListener('mouseover', () => highlightStars(star.dataset.value));
-    star.addEventListener('mouseout', () => highlightStars(selectedRating));
-    star.addEventListener('click', () => {
-        const val = parseInt(star.dataset.value);
-        if (selectedRating === val) {
-            selectedRating = 0;
-        } else {
-            selectedRating = val; 
-        }
-        highlightStars(selectedRating);
-    });
-});
-
-function highlightStars(val) {
-    stars.forEach(s => {
-        if (s.dataset.value <= val) {
-            s.classList.replace('far', 'fas'); 
-            s.classList.add('active');
-        } else {
-            s.classList.replace('fas', 'far'); 
-            s.classList.remove('active');
-        }
-    });
-}
-const reviewModal = document.getElementById('reviewModal');
-document.getElementById('openReviewModal').onclick = () => reviewModal.style.display = 'flex';
-document.querySelector('.close-modal').onclick = () => reviewModal.style.display = 'none';
-document.getElementById('sendWhatsappReview').onclick = function() {
-    const name = document.getElementById('reviewerName').value;
-    const text = document.getElementById('reviewText').value;
-    
-    if(!name || !text || selectedRating === 0) {
-        alert("لطفاً، اختر عدد النجوم واكتب اسمك ورأيك!");
-        return;
+    // وظيفة تحديث شكل النجوم
+    function updateStars(rating) {
+        stars.forEach(star => {
+            const val = parseInt(star.getAttribute('data-value'));
+            if (val <= rating) {
+                star.classList.replace('far', 'fas');
+                star.classList.add('selected');
+            } else {
+                star.classList.replace('fas', 'far');
+                star.classList.remove('selected');
+            }
+        });
     }
 
-    const phoneNumber = "966576059864";
-    const starsString = "⭐".repeat(selectedRating);
-    const message = `أهلاً بصمة الإبداع، أود إضافة تقييم جديد:%0a
-*الاسم:* ${name}%0a
-*التقييم:* ${starsString} (${selectedRating} من 5)%0a
-*الرأي:* ${text}`;
+    // إضافة مستمع للأحداث يدعم اللمس والضغط
+    stars.forEach(star => {
+        const handleInteraction = (e) => {
+            e.preventDefault(); // منع التداخل في الموبايل
+            const val = parseInt(star.getAttribute('data-value'));
+            
+            if (currentRating === val) {
+                currentRating = 0; // إلغاء الاختيار عند الضغط مرة ثانية
+            } else {
+                currentRating = val; // اختيار التقييم
+            }
+            updateStars(currentRating);
+        };
 
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-    reviewModal.style.display = 'none';
-};
+        star.addEventListener('click', handleInteraction);
+        star.addEventListener('touchend', handleInteraction); // دعم الموبايل بشكل مباشر
+    });
+
+    // فتح وإغلاق المودال
+    const modal = document.getElementById('reviewModal');
+    const openBtn = document.getElementById('openReviewModal');
+    const closeBtn = document.querySelector('.close-modal');
+
+    if(openBtn) {
+        openBtn.addEventListener('click', () => modal.style.display = 'flex');
+        closeBtn.addEventListener('click', () => modal.style.display = 'none');
+    }
+
+    // إرسال التقييم
+    document.getElementById('sendWhatsappReview').onclick = function() {
+        const name = document.getElementById('reviewerName').value;
+        const text = document.getElementById('reviewText').value;
+        
+        if (!name || !text || currentRating === 0) {
+            alert("من فضلك اختر النجوم واكتب اسمك ورأيك");
+            return;
+        }
+
+        const msg = `تقييم جديد لبصمة الإبداع:%0aالاسم: ${name}%0aالنجوم: ${currentRating}%0aالرأي: ${text}`;
+        window.open(`https://wa.me/966576059864?text=${msg}`, '_blank');
+        modal.style.display = 'none';
+    };
+});
