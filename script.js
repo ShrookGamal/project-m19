@@ -147,31 +147,53 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-const modal = document.getElementById('reviewModal');
-const openBtn = document.getElementById('openReviewModal');
-const closeBtn = document.querySelector('.close-modal');
+let selectedRating = 0;
+const stars = document.querySelectorAll('.star-item');
 
-if (openBtn) {
-    openBtn.onclick = () => modal.style.display = 'flex';
-    closeBtn.onclick = () => modal.style.display = 'none';
-    window.onclick = (e) => { if (e.target == modal) modal.style.display = 'none'; }
+stars.forEach(star => {
+    star.addEventListener('mouseover', () => highlightStars(star.dataset.value));
+    star.addEventListener('mouseout', () => highlightStars(selectedRating));
+    star.addEventListener('click', () => {
+        const val = parseInt(star.dataset.value);
+        if (selectedRating === val) {
+            selectedRating = 0;
+        } else {
+            selectedRating = val; 
+        }
+        highlightStars(selectedRating);
+    });
+});
+
+function highlightStars(val) {
+    stars.forEach(s => {
+        if (s.dataset.value <= val) {
+            s.classList.replace('far', 'fas'); 
+            s.classList.add('active');
+        } else {
+            s.classList.replace('fas', 'far'); 
+            s.classList.remove('active');
+        }
+    });
 }
+const reviewModal = document.getElementById('reviewModal');
+document.getElementById('openReviewModal').onclick = () => reviewModal.style.display = 'flex';
+document.querySelector('.close-modal').onclick = () => reviewModal.style.display = 'none';
 document.getElementById('sendWhatsappReview').onclick = function() {
     const name = document.getElementById('reviewerName').value;
     const text = document.getElementById('reviewText').value;
-    const stars = document.querySelector('input[name="stars"]:checked')?.value || "بدون نجوم";
     
-    if(!name || !text) {
-        alert("لطفاً، املأ اسمك ورأيك أولاً!");
+    if(!name || !text || selectedRating === 0) {
+        alert("لطفاً، اختر عدد النجوم واكتب اسمك ورأيك!");
         return;
     }
 
-    const phoneNumber = "966576059864"; 
+    const phoneNumber = "966576059864";
+    const starsString = "⭐".repeat(selectedRating);
     const message = `أهلاً بصمة الإبداع، أود إضافة تقييم جديد:%0a
 *الاسم:* ${name}%0a
-*التقييم:* ${stars} نجوم%0a
+*التقييم:* ${starsString} (${selectedRating} من 5)%0a
 *الرأي:* ${text}`;
 
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-    modal.style.display = 'none';    
-}
+    reviewModal.style.display = 'none';
+};

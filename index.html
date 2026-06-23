@@ -362,16 +362,17 @@
         <div class="section-header-center animate-reveal">
             <span class="gold-badge">آراء عملائنا</span>
             <h2 class="ultra-title">ماذا قالوا عن <span class="gold-text">إبداعنا؟</span></h2>
-            <button id="openReviewModal" class="add-review-btn">أضف تقييمك  <i class="fas fa-plus"></i></button>
+            <button id="openReviewModal" class="add-review-btn">أضف تقييمك <i class="fas fa-plus"></i></button>
         </div>
+
         <div class="reviews-grid animate-reveal">
             <div class="review-card-glass">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p>"أفضل شركة باركيه تعاملت معها في الرياض، دقة في المواعيد وتركيب احترافي جداً."</p>
+                <div class="stars-display">⭐⭐⭐⭐⭐</div>
+                <p>"أفضل شركة تعاملت معها في الرياض، دقة في المواعيد وتركيب احترافي جداً."</p>
                 <h4>أحمد القحطاني</h4>
             </div>
             <div class="review-card-glass">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <div class="stars-display">⭐⭐⭐⭐⭐</div>
                 <p>"سجاد المساجد عندهم جودته عالية جداً وخاماته فخمة، بارك الله فيكم."</p>
                 <h4>خالد الدوسري</h4>
             </div>
@@ -380,21 +381,18 @@
     <div id="reviewModal" class="review-modal">
         <div class="modal-content-glass">
             <span class="close-modal">&times;</span>
-            <h3>شاركنا رأيك بـ <span class="gold-text">بصمة الإبداع</span></h3>            
-            <div class="star-rating">
-                <input type="radio" name="stars" id="star-5" value="5">
-                <label for="star-5" class="fas fa-star"></label>
-                <input type="radio" name="stars" id="star-4" value="4">
-                <label for="star-4" class="fas fa-star"></label>
-                <input type="radio" name="stars" id="star-3" value="3">
-                <label for="star-3" class="fas fa-star"></label>
-                <input type="radio" name="stars" id="star-2" value="2">
-                <label for="star-2" class="fas fa-star"></label>
-                <input type="radio" name="stars" id="star-1" value="1">
-                <label for="star-1" class="fas fa-star"></label>
+            <h3>شاركنا رأيك بـ <span class="gold-text">بصمة الإبداع</span></h3>
+                <div class="star-rating-container">
+                <span class="star-item far fa-star" data-value="1"></span>
+                <span class="star-item far fa-star" data-value="2"></span>
+                <span class="star-item far fa-star" data-value="3"></span>
+                <span class="star-item far fa-star" data-value="4"></span>
+                <span class="star-item far fa-star" data-value="5"></span>
             </div>
+
             <input type="text" id="reviewerName" placeholder="اسـمك الكـريم">
             <textarea id="reviewText" placeholder="اكتب رأيك في خدماتنا هنا..."></textarea>
+            
             <button id="sendWhatsappReview" class="whatsapp-send-btn">
                 إرسال التقييم عبر واتساب <i class="fab fa-whatsapp"></i>
             </button>
