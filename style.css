@@ -1395,3 +1395,44 @@ body {
     .floating-cta { bottom: 20px; right: 20px; }
     .float-btn { width: 50px; height: 50px; font-size: 1.2rem; }
 }
+/* --- إصلاح توسيط سكشن لماذا نحن في الموبايل --- */
+@media (max-width: 768px) {
+    /* توسيط عنوان السكشن */
+    .section-header-dark {
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    /* ضبط الشبكة لتكون في المنتصف تماماً */
+    .innovative-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* توسيط الكروت أفقياً */
+        justify-content: center;
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    /* ضبط الكارت الفردي */
+    .feature-hex-card {
+        width: 100%;
+        max-width: 380px; /* الحفاظ على حجم الكارت متناسق */
+        text-align: center; /* توسيط النص داخل الكارت */
+        margin: 0 auto; /* ضمان التوسيط في الحاوية */
+        
+        /* تعديل الأنيميشن للموبايل ليأتي من الأسفل بدلاً من الجنب */
+        transform: translateY(50px); 
+        opacity: 0;
+    }
+
+    /* تفعيل الظهور في المنتصف */
+    .feature-hex-card.active {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+
+    /* توسيط الأيقونة والمحتوى داخل الكارت */
+    .hex-icon {
+        margin: 0 auto 20px auto;
+    }
+}
