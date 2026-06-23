@@ -6,14 +6,12 @@
     --glass-bg: rgba(255, 255, 255, 0.078);
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Cairo', sans-serif;
 }
-
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
@@ -39,7 +37,6 @@ body {
     padding: 10px 30px;
     transition: var(--transition);
 }
-
 #navbar.scrolled {
     top: 0;
     width: 100%;
@@ -48,36 +45,30 @@ body {
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     border: none;
 }
-
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .logo-area {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 .logo-img {
     height: 45px;
     filter: drop-shadow(0 0 5px rgba(0,0,0,0.1));
 }
-
 .brand-name {
     font-weight: 700;
     font-size: 1.2rem;
     color: var(--primary-color);
 }
-
 .nav-links {
     display: flex;
     list-style: none;
     gap: 20px;
 }
-
 .nav-item {
     text-decoration: none;
     color: var(--text-dark);
@@ -87,12 +78,9 @@ body {
     padding: 5px 10px;
     transition: var(--transition);
 }
-
-/* Active State Modern Style */
 .nav-item.active {
     color: var(--primary-color);
 }
-
 .nav-item.active::after {
     content: '';
     position: absolute;
@@ -104,7 +92,6 @@ body {
     background: var(--accent-color);
     border-radius: 10px;
 }
-
 .call-btn {
     background: var(--primary-color);
     color: white;
@@ -117,13 +104,10 @@ body {
     align-items: center;
     gap: 8px;
 }
-
 .call-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(45, 90, 39, 0.3);
 }
-
-/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
@@ -134,14 +118,13 @@ body {
     overflow: hidden;
     color: white;
 }
-
 .hero-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/bg.png'); /* ضع صورتك هنا */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/bg.png'); 
     background-size: cover;
     background-position: center;
     filter: blur(4px);
@@ -204,8 +187,6 @@ body {
 .btn:hover {
     transform: scale(1.05);
 }
-
-/* Mobile Adjustments */
 .menu-toggle {
     display: none;
     font-size: 1.5rem;
@@ -251,8 +232,6 @@ body {
     left: 20px;
     font-size: 2rem;
 }
-
-/* Responsive Fixes */
 @media (max-width: 992px) {
     .nav-links, .nav-cta {
         display: none;
@@ -268,37 +247,29 @@ body {
         top: 10px;
     }
 }
-
-/* Animations */
 .animate-text {
     animation: fadeInUp 1s ease forwards;
 }
-
 .animate-text-delay {
     animation: fadeInUp 1s ease 0.3s forwards;
     opacity: 0;
 }
-
 @keyframes fadeInUp {
     from { transform: translateY(30px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
 }
-/* Container Control */
 .container-luxury {
     max-width: 1300px;
     margin: 0 auto;
-    padding: 0 50px; /* مساحة تمنع التصاق المحتوى */
+    padding: 0 50px; 
 }
-
 .about-premium {
     position: relative;
     padding: 150px 0;
-    background: #0a0e12; /* خلفية داكنة غامضة لتبرز الزجاج */
+    background: #0a0e12; 
     overflow: hidden;
     color: #fff;
 }
-
-/* Floating Background Shapes */
 .floating-shape {
     position: absolute;
     filter: blur(80px);
@@ -309,13 +280,10 @@ body {
 }
 .shape-1 { width: 400px; height: 400px; background: var(--primary-color); top: -100px; left: -100px; }
 .shape-2 { width: 300px; height: 300px; background: var(--accent-color); bottom: -50px; right: -50px; }
-
 @keyframes moveShapes {
     0% { transform: translate(0, 0) scale(1); }
     100% { transform: translate(50px, 100px) scale(1.2); }
 }
-
-/* Grid System */
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1.1fr;
@@ -324,21 +292,16 @@ body {
     position: relative;
     z-index: 5;
 }
-
-
-/* Text Side */
 .ultra-title {
     font-size: 3.5rem;
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 30px;
 }
-
 .glow-text {
     color: var(--accent-color);
     text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
 }
-
 .highlight-p {
     font-size: 1.4rem;
     color: #e0e0e0;
@@ -346,21 +309,17 @@ body {
     border-right: 4px solid var(--accent-color);
     padding-right: 20px;
 }
-
 .main-p {
     font-size: 1.1rem;
     color: #b0b0b0;
     line-height: 1.8;
 }
-
-/* Features Box */
 .features-interactive {
     margin: 40px 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-
 .feat-box {
     display: flex;
     align-items: center;
@@ -376,7 +335,6 @@ body {
     background: rgba(255,255,255,0.08);
     transform: scale(1.02);
 }
-
 .feat-icon {
     width: 60px;
     height: 60px;
@@ -387,8 +345,6 @@ body {
     justify-content: center;
     font-size: 1.5rem;
 }
-
-/* Modern CTA */
 .modern-cta {
     display: inline-flex;
     align-items: center;
@@ -401,7 +357,6 @@ body {
     overflow: hidden;
     padding: 10px 0;
 }
-
 .modern-cta::after {
     content: '';
     position: absolute;
@@ -412,12 +367,9 @@ body {
     background: var(--accent-color);
     transition: 0.4s;
 }
-
 .modern-cta:hover::after {
     width: 100%;
 }
-
-/* Mobile Fixes */
 @media (max-width: 992px) {
     .container-luxury { padding: 0 20px; }
     .about-grid { grid-template-columns: 1fr; gap: 60px; text-align: center; }
@@ -439,15 +391,11 @@ body {
     cursor: pointer;
     transition: var(--transition);
 }
-
-/* حاوية السهم */
 .iphone-arrow {
     position: relative;
     width: 30px;
     height: 30px;
 }
-
-/* رسم السهم V بنحافة الآيفون */
 .chevron {
     position: absolute;
     width: 28px;
@@ -456,16 +404,12 @@ body {
     transform: scale3d(0.5, 0.5, 0.5);
     animation: move-chevron 3s ease-out infinite;
 }
-
 .chevron:first-child {
     animation: move-chevron 3s ease-out 1s infinite;
 }
-
 .chevron:nth-child(2) {
     animation: move-chevron 3s ease-out 2s infinite;
 }
-
-/* صنع شكل الـ V باستخدام Before و After */
 .chevron:before,
 .chevron:after {
     content: ' ';
@@ -473,22 +417,18 @@ body {
     top: 0;
     height: 100%;
     width: 51%;
-    background: var(--accent-color); /* اللون الذهبي */
+    background: var(--accent-color); 
     border-radius: 2px;
 }
-
 .chevron:before {
     left: 0;
     transform: skew(0deg, 30deg);
 }
-
 .chevron:after {
     right: 0;
     width: 50%;
     transform: skew(0deg, -30deg);
 }
-
-/* أنيميشن الحركة الانسيابية لأسفل */
 @keyframes move-chevron {
     25% {
         opacity: 1;
@@ -506,7 +446,6 @@ body {
         transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
     }
 }
-
 .scroll-text {
     margin-top: 50px;
     display: block;
@@ -518,13 +457,10 @@ body {
     opacity: 0.8;
     font-weight: 600;
 }
-
-/* تفاعل عند الحوم بالماوس */
 .scroll-indicator:hover .chevron:before,
 .scroll-indicator:hover .chevron:after {
-    background: #fff; /* يتغير للأبيض عند الوقوف عليه */
+    background: #fff; 
 }
-/* الحاوية الأساسية */
 .about-visual {
     position: relative;
     height: 600px;
@@ -532,26 +468,21 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-/* الإطار الهندسي الخلفي */
 .magical-border {
     position: absolute;
     width: 100%;
     height: 100%;
     border: 2px solid var(--accent-color);
-    border-radius: 50% 50% 30% 70% / 50% 30% 70% 50%; /* شكل عضوي متغير */
+    border-radius: 50% 50% 30% 70% / 50% 30% 70% 50%; 
     animation: morphBorder 8s linear infinite;
     opacity: 0.3;
     z-index: 1;
 }
-
 @keyframes morphBorder {
     0% { border-radius: 50% 50% 30% 70% / 50% 30% 70% 50%; transform: rotate(0deg); }
     50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 40%; }
     100% { border-radius: 50% 50% 30% 70% / 50% 30% 70% 50%; transform: rotate(360deg); }
 }
-
-/* حاوية الكشف (The Reveal) */
 .reveal-container {
     position: relative;
     width: 90%;
@@ -559,35 +490,28 @@ body {
     overflow: hidden;
     border-radius: 40px;
     z-index: 2;
-    clip-path: inset(0 100% 0 0); /* تبدأ مخفية تماماً من اليمين */
+    clip-path: inset(0 100% 0 0); 
     transition: clip-path 1.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
-
-/* عندما يظهر السكشن يتم كشف الصورة */
 .reveal-container.active {
     clip-path: inset(0 0 0 0);
 }
-
 .image-wrapper {
     width: 100%;
     height: 100%;
     position: relative;
-    transform: scale(1.3); /* تبدأ كبيرة وتصغر عند الكشف */
+    transform: scale(1.3); 
     transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
 }
-
 .reveal-container.active .image-wrapper {
     transform: scale(1);
 }
-
 .ultimate-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: saturate(1.2);
 }
-
-/* الطبقة الزجاجية المتحركة */
 .glass-overlay {
     position: absolute;
     top: 0;
@@ -596,8 +520,6 @@ body {
     height: 100%;
     pointer-events: none;
 }
-
-/* الكارت الطائر */
 .floating-info-card {
     position: absolute;
     bottom: 20px;
@@ -612,12 +534,10 @@ body {
     z-index: 5;
     animation: floatCard 4s ease-in-out infinite;
 }
-
 @keyframes floatCard {
     0%, 100% { transform: translateY(0) rotate(-2deg); }
     50% { transform: translateY(-15px) rotate(2deg); }
 }
-
 .icon-pulse {
     width: 45px;
     height: 45px;
@@ -630,19 +550,16 @@ body {
     box-shadow: 0 0 0 0 rgba(45, 90, 39, 0.4);
     animation: pulseIcon 2s infinite;
 }
-
 @keyframes pulseIcon {
     70% { box-shadow: 0 0 0 15px rgba(45, 90, 39, 0); }
     100% { box-shadow: 0 0 0 0 rgba(45, 90, 39, 0); }
 }
-/* السكشن الفاتح الفخم */
 .services-light-glass {
     position: relative;
     padding: 150px 0;
-    background: #f8eddc; /* لون كريمي هادئ جداً */
+    background: #f8eddc; 
     overflow: hidden;
 }
-
 .liquid-bg {
     position: absolute;
     top: 0;
@@ -651,7 +568,6 @@ body {
     height: 100%;
     z-index: 1;
 }
-
 .blob {
     position: absolute;
     width: 500px;
@@ -661,16 +577,13 @@ body {
     border-radius: 50%;
     animation: moveBlobs 20s infinite alternate;
 }
-
 .blob:nth-child(1) { top: -10%; left: -10%; }
 .blob:nth-child(2) { bottom: -10%; right: -10%; animation-delay: -5s; }
 .blob:nth-child(3) { top: 40%; left: 30%; background: #d4af3711; }
-
 @keyframes moveBlobs {
     from { transform: translate(0, 0) scale(1); }
     to { transform: translate(100px, 50px) scale(1.2); }
 }
-
 .container-full {
     max-width: 1500px;
     margin: 0 auto;
@@ -678,38 +591,31 @@ body {
     position: relative;
     z-index: 5;
 }
-
 .header-content {
     text-align: center;
     max-width: 900px;
     margin: 0 auto 80px;
 }
-
 .main-title-glass {
     font-size: 3.5rem;
     color: #2c3e50;
     margin-bottom: 25px;
     font-weight: 900;
 }
-
 .gold-text { color: #d4af37; }
-
 .seo-lead {
     font-size: 1.2rem;
     line-height: 2;
     color: #666;
 }
-
 .services-dynamic-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 40px;
 }
-
 .service-mega-card {
     perspective: 1000px;
 }
-
 .glass-body {
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(25px);
@@ -723,14 +629,12 @@ body {
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     transform-style: preserve-3d;
 }
-
 .service-mega-card:hover .glass-body {
     transform: translateY(-20px) rotateX(5deg);
     background: rgba(255, 255, 255, 0.7);
     box-shadow: 0 30px 60px rgba(212, 175, 55, 0.15);
     border: 1px solid #d4af37;
 }
-
 .number-tag {
     position: absolute;
     top: 30px;
@@ -740,44 +644,37 @@ body {
     color: rgba(212, 175, 55, 0.1);
     transition: 0.5s;
 }
-
 .service-mega-card:hover .number-tag {
     color: rgba(212, 175, 55, 0.3);
     transform: scale(1.2);
 }
-
 .icon-wrap {
     font-size: 3rem;
     color: #2d5a27;
     margin-bottom: 25px;
     transition: 0.5s;
 }
-
 .service-mega-card:hover .icon-wrap {
     transform: translateZ(50px);
     color: #d4af37;
 }
-
 .glass-body h3 {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: #333;
 }
-
 .service-p {
     font-size: 1.05rem;
     line-height: 1.9;
     color: #555;
     margin-bottom: 30px;
 }
-
 .features-list {
     list-style: none;
     display: grid;
     grid-template-columns: 1fr;
     gap: 12px;
 }
-
 .features-list li {
     font-weight: 700;
     color: #444;
@@ -785,79 +682,64 @@ body {
     align-items: center;
     gap: 10px;
 }
-
 .features-list li i {
     color: #d4af37;
 }
-
-/* Responsive */
 @media (max-width: 768px) {
     .main-title-glass { font-size: 2.2rem; }
     .container-full { padding: 0 20px; }
     .services-dynamic-grid { grid-template-columns: 1fr; }
 }
-/* --- ستايل سكشن معرض الأعمال (بصمة الإبداع) --- */
 .portfolio-section {
     padding: 100px 0;
-    background-color: #f7f2ea; /* لون كريمي فاخر */
+    background-color: #f7f2ea;
     overflow: hidden;
 }
-
-/* توسيط النصوص في رأس السكشن */
 .portfolio-section .section-header {
     text-align: center;
     max-width: 800px;
     margin: 0 auto 50px auto;
 }
-
 .portfolio-section .main-title {
     font-size: 3.5rem;
     font-weight: 900;
     color: #2c3e50;
     margin-top: 15px;
 }
-
 .portfolio-section .gold-text {
     color: #d4af37;
     text-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
 }
-
 .portfolio-section .section-desc {
     font-size: 1.2rem;
     color: #777;
     line-height: 1.8;
     margin-top: 20px;
 }
-
-/* شبكة الصور الموحدة (حجم واحد لكل الصور) */
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 30px;
     padding: 0 60px;
 }
-
 .gallery-item {
     position: relative;
-    height: 350px; /* توحيد الارتفاع لجميع الصور */
+    height: 350px; 
     border-radius: 30px;
     overflow: hidden;
     background: #fff;
     box-shadow: 0 15px 35px rgba(0,0,0,0.05);
     cursor: pointer;
-    transform: translateY(50px); /* للأنيميشن */
-    opacity: 0; /* للأنيميشن */
+    transform: translateY(50px); 
+    opacity: 0; 
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
-
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* جعل الصورة تملاً المساحة بدون تشوه */
+    object-fit: cover;
     transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
 }
-
-/* أنيميشن الحوم (Hover) العبقري */
 .gallery-item:hover {
     transform: translateY(-15px) scale(1.03) !important;
     box-shadow: 0 30px 60px rgba(212, 175, 55, 0.25);
@@ -887,8 +769,6 @@ body {
 .gallery-item:hover::before {
     left: 125%;
 }
-
-/* إطار داخلي مضيء يظهر عند الحوم */
 .gallery-item::after {
     content: '';
     position: absolute;
@@ -900,19 +780,14 @@ body {
     transition: 0.5s;
     z-index: 3;
 }
-
 .gallery-item:hover::after {
     opacity: 1;
     transform: scale(1);
 }
-
-/* كلاس التفعيل للأنيميشن عند السكرول */
 .gallery-item.active {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* تحسين العرض على الموبايل */
 @media (max-width: 992px) {
     .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -939,8 +814,6 @@ body {
     overflow: hidden;
     color: #fff;
 }
-
-/* كرة الضوء في الخلفية */
 .bg-glow-orb {
     position: absolute;
     width: 600px;
@@ -952,30 +825,25 @@ body {
     z-index: 1;
     animation: moveOrb 15s infinite alternate;
 }
-
 @keyframes moveOrb {
     from { transform: translate(0,0); }
     to { transform: translate(-300px, 200px); }
 }
-
 .section-header-dark {
     text-align: center;
     margin-bottom: 100px;
     position: relative;
     z-index: 5;
 }
-
 .title-dark {
     font-size: 3.5rem;
     font-weight: 900;
     margin: 20px 0;
 }
-
 .accent-glow {
     color: #d4af37;
     text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
 }
-
 .gold-badge {
     background: rgba(212, 175, 55, 0.1);
     color: #d4af37;
@@ -985,8 +853,6 @@ body {
     font-size: 0.9rem;
     font-weight: 700;
 }
-
-/* شبكة الكروت المبتكرة */
 .innovative-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -995,25 +861,21 @@ body {
     position: relative;
     z-index: 5;
 }
-
 .feature-hex-card {
     position: relative;
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 60px 40px;
-    border-radius: 40px 0 40px 0; /* شكل هندسي مميز */
+    border-radius: 40px 0 40px 0;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
 }
-
 .feature-hex-card:hover {
     transform: translateY(-20px) scale(1.02);
     background: rgba(212, 175, 55, 0.05);
     border-color: rgba(212, 175, 55, 0.4);
 }
-
-/* خط ضوئي يلف حول الكارت */
 .hex-border-glow {
     position: absolute;
     top: 0; left: -100%;
@@ -1021,11 +883,9 @@ body {
     background: linear-gradient(90deg, transparent, #d4af37);
     transition: 0.5s;
 }
-
 .feature-hex-card:hover .hex-border-glow {
     left: 100%;
 }
-
 .hex-icon {
     font-size: 3rem;
     color: #d4af37;
@@ -1033,49 +893,40 @@ body {
     filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
     transition: 0.5s;
 }
-
 .feature-hex-card:hover .hex-icon {
     transform: scale(1.2) rotate(-10deg);
 }
-
 .hex-content h3 {
     font-size: 1.8rem;
     margin-bottom: 15px;
     color: #f9f9f9;
 }
-
 .hex-content p {
     color: #aaa;
     line-height: 1.8;
     font-size: 1.05rem;
 }
-
-/* أنيميشن الدخول */
 .feature-hex-card {
     opacity: 0;
     transform: translateX(50px);
 }
-
 .feature-hex-card.active {
     opacity: 1;
     transform: translateX(0);
 }
-/* --- ستايل سكشن تواصل معنا العبقري --- */
 .ultra-contact {
     position: relative;
     padding: 100px 0;
-    background: #050805; /* خلفية داكنة جداً تبرز الذهب والأبيض */
+    background: #050805; 
     overflow: hidden;
 }
-
 .contact-parallax-bg {
     position: absolute;
     inset: 0;
     background: url('images/about2.png') center/cover;
-    filter: blur(5px) brightness(0.2); /* تعتيم قوي ليبرز الكلام والكروت */
+    filter: blur(5px) brightness(0.2); 
     z-index: 1;
 }
-
 .container-contact {
     position: relative;
     z-index: 10;
@@ -1083,13 +934,10 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-
-/* --- ستايل العنوان المبهر --- */
 .modern-header {
     text-align: center;
     margin-bottom: 80px;
 }
-
 .badge-wrapper {
     display: flex;
     align-items: center;
@@ -1097,13 +945,11 @@ body {
     gap: 15px;
     margin-bottom: 20px;
 }
-
 .gold-line {
     width: 50px;
     height: 2px;
     background: linear-gradient(90deg, transparent, #d4af37);
 }
-
 .badge-text {
     color: #d4af37;
     font-weight: 700;
@@ -1111,26 +957,22 @@ body {
     font-size: 0.9rem;
     text-transform: uppercase;
 }
-
 .hero-title {
     font-size: 4rem;
     color: #fff;
     font-weight: 900;
     line-height: 1.2;
 }
-
 .glow-text {
     color: #fff;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 40px #d4af37;
 }
-
 .separator-dots {
     margin-top: 25px;
     display: flex;
     justify-content: center;
     gap: 8px;
 }
-
 .separator-dots span {
     width: 8px;
     height: 8px;
@@ -1138,19 +980,15 @@ body {
     border-radius: 50%;
     animation: dotsPulse 1.5s infinite alternate;
 }
-
 @keyframes dotsPulse {
     from { opacity: 0.3; transform: scale(0.8); }
     to { opacity: 1; transform: scale(1.2); }
 }
-
-/* --- شبكة الكروت المتناظرة (قصاد بعض) --- */
 .contact-grid-duo {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* كاردين قصاد بعض */
+    grid-template-columns: 1fr 1fr; 
     gap: 25px;
 }
-
 .glass-card-duo {
     text-decoration: none;
     background: rgba(255, 255, 255, 0.03);
@@ -1164,14 +1002,12 @@ body {
     gap: 20px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
 .glass-card-duo:hover {
     transform: scale(1.05) translateX(-10px);
     background: rgba(255, 255, 255, 0.08);
     border-color: #d4af37;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
-
 .icon-circle {
     width: 65px;
     height: 65px;
@@ -1185,19 +1021,16 @@ body {
     border: 1px solid rgba(212, 175, 55, 0.3);
     transition: 0.4s;
 }
-
 .glass-card-duo:hover .icon-circle {
     background: #d4af37;
     color: #fff;
     box-shadow: 0 0 20px #d4af37;
 }
-
 .card-info h3 {
     color: #aaa;
     font-size: 0.9rem;
     margin-bottom: 5px;
 }
-
 .card-info .num {
     color: #fff;
     font-size: 1.4rem;
@@ -1205,15 +1038,11 @@ body {
     display: block;
     direction: ltr;
 }
-
-/* كارت العنوان العريض أسفلهم */
 .address-full {
     grid-column: span 2;
     margin-top: 10px;
     justify-content: center;
 }
-
-/* أنيميشن الظهور (Active) */
 .glass-card-duo {
     opacity: 0;
     transform: translateY(30px);
@@ -1223,14 +1052,11 @@ body {
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
-
-/* الموبايل - كارت واحد تحت التاني */
 @media (max-width: 768px) {
     .contact-grid-duo { grid-template-columns: 1fr; }
     .address-full { grid-column: span 1; }
     .hero-title { font-size: 2.5rem; }
 }
-/* --- Footer Styling --- */
 .main-footer {
     background: #050805;
     padding: 80px 0 30px;
@@ -1329,8 +1155,6 @@ body {
     text-decoration: none;
     font-weight: 900;
 }
-
-/* --- Floating Buttons Styling --- */
 .floating-cta {
     position: fixed;
     bottom: 30px;
@@ -1340,7 +1164,6 @@ body {
     gap: 15px;
     z-index: 999;
 }
-
 .float-btn {
     width: 60px;
     height: 60px;
@@ -1355,84 +1178,95 @@ body {
     transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation: floatPulse 2s infinite;
 }
-
 .call-float {
     background: #d4af37;
 }
-
 .whatsapp-float {
     background: #25d366;
     animation-delay: 0.5s;
 }
-
 .float-btn:hover {
     transform: scale(1.1) rotate(10deg);
 }
-
 @keyframes floatPulse {
     0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
     70% { box-shadow: 0 0 0 20px rgba(212, 175, 55, 0); }
     100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
 }
-
 .whatsapp-float {
     animation: floatPulseGreen 2s infinite;
 }
-
 @keyframes floatPulseGreen {
     0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
     70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
     100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
-
-/* Responsive Footer */
 @media (max-width: 992px) {
     .footer-grid { grid-template-columns: 1fr 1fr; }
 }
-
 @media (max-width: 600px) {
     .footer-grid { grid-template-columns: 1fr; }
     .floating-cta { bottom: 20px; right: 20px; }
     .float-btn { width: 50px; height: 50px; font-size: 1.2rem; }
 }
-/* --- إصلاح توسيط سكشن لماذا نحن في الموبايل --- */
 @media (max-width: 768px) {
-    /* توسيط عنوان السكشن */
     .section-header-dark {
         text-align: center;
         padding: 0 20px;
     }
-
-    /* ضبط الشبكة لتكون في المنتصف تماماً */
     .innovative-grid {
         display: flex;
         flex-direction: column;
-        align-items: center; /* توسيط الكروت أفقياً */
+        align-items: center; 
         justify-content: center;
         padding: 0 20px;
         gap: 30px;
     }
-
-    /* ضبط الكارت الفردي */
     .feature-hex-card {
         width: 100%;
-        max-width: 380px; /* الحفاظ على حجم الكارت متناسق */
-        text-align: center; /* توسيط النص داخل الكارت */
-        margin: 0 auto; /* ضمان التوسيط في الحاوية */
-        
-        /* تعديل الأنيميشن للموبايل ليأتي من الأسفل بدلاً من الجنب */
+        max-width: 380px; 
+        text-align: center; 
+        margin: 0 auto; 
         transform: translateY(50px); 
         opacity: 0;
     }
-
-    /* تفعيل الظهور في المنتصف */
     .feature-hex-card.active {
         transform: translateY(0) !important;
         opacity: 1 !important;
     }
 
-    /* توسيط الأيقونة والمحتوى داخل الكارت */
     .hex-icon {
         margin: 0 auto 20px auto;
     }
+}
+.reviews-section { padding: 100px 0; background: #fdfaf5; text-align: center; }
+.add-review-btn {
+    background: #d4af37; color: white; border: none; padding: 12px 30px;
+    border-radius: 50px; font-weight: 700; cursor: pointer; margin-top: 20px;
+    transition: 0.3s; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+.add-review-btn:hover { transform: scale(1.1); }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; padding: 0 40px; }
+.review-card-glass { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 15px 40px rgba(0,0,0,0.05); border: 1px solid #eee; }
+.review-modal {
+    display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); backdrop-filter: blur(10px); align-items: center; justify-content: center;
+}
+.modal-content-glass {
+    background: rgba(255, 255, 255, 0.9); padding: 40px; border-radius: 40px; width: 90%; max-width: 500px;
+    text-align: center; position: relative; animation: slideUp 0.5s ease;
+}
+@keyframes slideUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.close-modal { position: absolute; top: 20px; left: 20px; font-size: 30px; cursor: pointer; color: #999; }
+.star-rating { display: flex; flex-direction: row-reverse; justify-content: center; margin: 20px 0; }
+.star-rating input { display: none; }
+.star-rating label { font-size: 35px; color: #ddd; cursor: pointer; transition: 0.3s; padding: 5px; }
+.star-rating input:checked ~ label, .star-rating label:hover, .star-rating label:hover ~ label { color: #d4af37; text-shadow: 0 0 10px rgba(212, 175, 55, 0.5); }
+.modal-content-glass input, .modal-content-glass textarea {
+    width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 15px; border: 1px solid #ddd;
+    font-family: 'Cairo'; outline: none;
+}
+.whatsapp-send-btn {
+    background: #25d366; color: white; border: none; width: 100%; padding: 15px;
+    border-radius: 15px; font-weight: 700; cursor: pointer; font-size: 1.1rem;
 }
